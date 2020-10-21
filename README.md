@@ -5,17 +5,17 @@ A ready to use Web Application for a Hospital.
 ## Project Overview
 
 
-This allows a user to Book Appointment.
+1. This allows a user to Book Appointment.
 
-To create and manage Patient records.
+2. To create and manage Patient records.
 
-To record Vital Sign of the Patient and maintains with correspondance to Date.
+3. To record Vital Sign of the Patient and maintains with correspondance to Date.
 
-Specialized login for each member in the Hospital like - Doctor, Nurse, User.
+4. Specialized login for each member in the Hospital like - Doctor, Nurse, User.
 
-Easy to swap authorities between different users.
+5. Easy to swap authorities between different users.
 
-Links and services are available based on the User Authorization.
+6. Links and services are available based on the User Authorization.
 
 
 ## Project setup
