@@ -2,8 +2,41 @@
 
 A ready to use Web Application for a Hospital.
 
-## Project Overview
+## Project Techstack
 
+1. React Js for Front End
+
+2. Spring Boot for Backend End
+
+3. Hibernate for ORM
+
+4. MySQL for Database
+
+5. Consul for Service Registry
+
+6. ELK for centralized logging
+
+7. DynamoDB for storing AOP logs
+
+8. RabbitMQ for publishing and consuming objects between microservices
+
+9. Kafka for Streaming the messages between microservices
+
+10. Hashicorp Vault for storing Database credentials
+
+11. Spring Cloud Config for centralized property configuration
+
+12. Distributed tracing with Jaeger
+
+13. Swagger Documentation
+
+14. Actuator and Custom End Points for better analysis
+
+15. Exported to Docker
+
+16. Data cache using Redis
+
+## Project Overview
 
 1. This allows a user to Book Appointment.
 
