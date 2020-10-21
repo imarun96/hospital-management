@@ -1,10 +1,21 @@
 ## Hospital Management
 
-For more detail, please visit:
+## Project Overview
 
-> [React Hooks: JWT Authentication & Authorization example](https://bezkoder.com/react-hooks-jwt-auth/)
+A ready to use Web Application for a Hospital.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This allows a user to Book Appointment.
+
+To create and manage Patient records.
+
+To record Vital Sign of the Patient and maintains with correspondance to Date.
+
+Specialized login for each member in the Hospital like - Doctor, Nurse, User.
+
+Easy to swap authorities between different users.
+
+Links and services are available based on the User Authorization.
+
 
 ## Project setup
 
