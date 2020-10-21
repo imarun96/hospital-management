@@ -36,6 +36,8 @@ A ready to use Web Application for a Hospital.
 
 16. Data cache using Redis
 
+17. JWT token authentication
+
 ## Project Overview
 
 1. This allows a user to Book Appointment.
