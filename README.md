@@ -1,8 +1,9 @@
 ## Hospital Management
 
+A ready to use Web Application for a Hospital.
+
 ## Project Overview
 
-A ready to use Web Application for a Hospital.
 
 This allows a user to Book Appointment.
 
