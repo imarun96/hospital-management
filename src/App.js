@@ -20,11 +20,13 @@ import CrudLogs from "./components/CrudLogs";
 import AdminOnlyRoute from "./components/AdminOnlyRoute";
 import UserOnlyRoute from "./components/UserOnlyRoute";
 import BookAppointment from "./components/BookAppointment";
-import BookingResponse from "./components/BookingResponse";
 import YourAppointments from "./components/YourAppointments";
 import AllAppointments from "./components/AllAppointments";
 import AuthoritySetting from "./components/AuthoritySetting";
 import AuthoritySuccessMessage from "./components/AuthoritySuccessMessage";
+
+import ReactNotification from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css';
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -46,6 +48,7 @@ const App = () => {
 
   return (
     <div>
+      <ReactNotification />
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <Link to={"/about"} className="navbar-brand">
           Apollo Hospitals
@@ -202,11 +205,6 @@ const App = () => {
             path="/appointment"
             exact
             component={BookAppointment}
-          ></UserOnlyRoute>
-          <UserOnlyRoute
-            path="/bookingResponse/*"
-            exact
-            component={BookingResponse}
           ></UserOnlyRoute>
           <UserOnlyRoute
             path="/yourAppointments"

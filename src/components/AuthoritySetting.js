@@ -40,7 +40,7 @@ class AuthoritySetting extends Component {
     const authOptions = ["ROLE_USER", "ROLE_DOCTOR", "ROLE_NURSE"];
     let items = [];
     let filteredOptions = authOptions.filter(
-      (option) => option != this.state.roleName
+      (option) => option !== this.state.roleName
     );
 
     for (let i = 0; i < filteredOptions.length; i++) {

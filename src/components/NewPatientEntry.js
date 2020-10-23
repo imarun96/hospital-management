@@ -3,6 +3,7 @@ import axios from "axios";
 import AuthService from "../services/auth.service";
 import { Button, Form, Label, Input } from "reactstrap";
 import { Helmet } from "react-helmet";
+import LocationSearchModal from "./LandingPage";
 class NewPatientEntryHandler extends Component {
   state = {
     name: "",
@@ -99,6 +100,7 @@ class NewPatientEntryHandler extends Component {
         <Label>Phone Number</Label>
         <Input type="numeric" onChange={this.handlePhoneNumber} />
         <Label>Address</Label>
+        <LocationSearchModal/>
         <Input type="text" onChange={this.handleAddress} />
         <br></br>
         <Label>

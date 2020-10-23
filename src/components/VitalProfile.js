@@ -41,7 +41,7 @@ class VitalProfile extends Component {
         this.setState({
           name: res.data.name,
           age: res.data.age,
-          sex: res.data.sex === 1 ? "Male" : "Female",
+          sex: res.data.sex,
           bloodGroup: res.data.bloodGroup,
         });
       });
