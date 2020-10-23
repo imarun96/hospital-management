@@ -100,7 +100,7 @@ class NewPatientEntryHandler extends Component {
         <Label>Phone Number</Label>
         <Input type="numeric" onChange={this.handlePhoneNumber} />
         <Label>Address</Label>
-        <LocationSearchModal/>
+        <LocationSearchModal />
         <Input type="text" onChange={this.handleAddress} />
         <br></br>
         <Label>

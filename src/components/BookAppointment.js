@@ -15,6 +15,7 @@ class BookAppointment extends Component {
     docType: "",
     maxNumber: "",
     res: "",
+    reason: "",
   };
   handleDate = (event) => {
     this.setState({ date: event.target.value }, () => {
@@ -58,6 +59,9 @@ class BookAppointment extends Component {
   handleName = (event) => {
     this.setState({ name: event.target.value.trim() });
   };
+  handleReason = (event) => {
+    this.setState({ reason: event.target.value.trim() });
+  };
   handlePhoneNumber = (event) => {
     this.setState({ phnNumber: event.target.value });
   };
@@ -86,16 +90,20 @@ class BookAppointment extends Component {
       docType: this.doctorType.value,
       inputUserId: currentUser,
       lastUpdateUserId: currentUser,
+      reason: this.state.reason,
+      status: "Not Verified",
     };
     const lengthOfName = this.state.name.length;
+    const lengthOfReason = this.state.reason.length;
     if (
       this.state.date === "" &&
       this.state.name === "" &&
-      this.state.phnNumber === ""
+      this.state.phnNumber === "" &&
+      this.state.reason === ""
     ) {
       store.addNotification({
         title: "Validation Error",
-        message: "Date, Name, Phone Number fields are mandatory.",
+        message: "Date, Name, Phone Number, Reason fields are mandatory.",
         type: "danger",
         container: "bottom-left",
         insert: "top",
@@ -125,10 +133,32 @@ class BookAppointment extends Component {
           duration: 3500,
         },
       });
+    } else if (this.state.reason.trim() === "") {
+      store.addNotification({
+        title: "Validation Error",
+        message: "Reason is required.",
+        type: "danger",
+        container: "bottom-left",
+        insert: "top",
+        dismiss: {
+          duration: 3500,
+        },
+      });
     } else if (this.state.name.length > 25) {
       store.addNotification({
         title: "Validation Error",
         message: "Name: Only 25 characters are allowed.",
+        type: "danger",
+        container: "bottom-left",
+        insert: "top",
+        dismiss: {
+          duration: 3500,
+        },
+      });
+    } else if (this.state.reason.length > 50) {
+      store.addNotification({
+        title: "Validation Error",
+        message: "Name: Only 50 characters are allowed.",
         type: "danger",
         container: "bottom-left",
         insert: "top",
@@ -152,7 +182,8 @@ class BookAppointment extends Component {
       this.state.date !== "" &&
       this.state.name !== "" &&
       this.state.phnNumber !== "" &&
-      lengthOfName <= 25
+      lengthOfName <= 25 &&
+      lengthOfReason <= 50
     ) {
       let isTimeSlotAvailable = false;
       axios
@@ -188,7 +219,7 @@ class BookAppointment extends Component {
                   width: 400,
                 });
               });
-            this.props.history.push("/yourAppointments/");
+            this.props.history.push("/yourAppointments");
           } else {
             store.addNotification({
               title: "Time slot has been taken.",
@@ -238,6 +269,8 @@ class BookAppointment extends Component {
         </select>
         <Label>Name</Label>
         <Input type="text" onChange={this.handleName} />
+        <Label>Reason</Label>
+        <Input type="text" onChange={this.handleReason} />
         <Label>Phone Number</Label>
         <NumberFormat
           format="+91  #####-#####"

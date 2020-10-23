@@ -3,6 +3,7 @@ import axios from "axios";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 import { Helmet } from "react-helmet";
+import { Button } from "reactstrap";
 
 export default class AllAppointments extends Component {
   constructor(props) {
@@ -16,12 +17,13 @@ export default class AllAppointments extends Component {
     let arr = [];
     const res = await axios.get("http://localhost:8004/book/appointment");
     this.setState({ loading: false, users: res.data });
-    console.log(res);
   }
   componentDidMount() {
-    console.log("Hello");
     this.getUsersData();
   }
+  acceptHandler = (props) => {
+    console.log("hello from button click = " + props.rowInfo);
+  };
   render() {
     const columns = [
       {
@@ -48,6 +50,10 @@ export default class AllAppointments extends Component {
         Header: "Time Slot",
         accessor: "timeSlot",
       },
+      {
+        Header: "Status",
+        accessor: "status",
+      },
     ];
     return (
       <div>
@@ -62,7 +68,6 @@ export default class AllAppointments extends Component {
         <br></br>
         <br></br>
         <ReactTable
-          onclick={this.registerValuesHandler}
           filterable={true}
           defaultPageSize={10}
           data={this.state.users}

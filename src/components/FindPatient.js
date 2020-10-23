@@ -20,7 +20,18 @@ export default class FindPatient extends Component {
     this.getUsersData();
   }
   render() {
+    const onRowClick = (state, rowInfo) => {
+      return {
+        onClick: (e) => {
+          window.open("/patientprofile/" + rowInfo.original.patient_id);
+        },
+      };
+    };
     const columns = [
+      {
+        Header: "Patient ID",
+        accessor: "patient_id",
+      },
       {
         Header: "Name",
         accessor: "name",
@@ -68,11 +79,11 @@ export default class FindPatient extends Component {
         <br></br>
         <br></br>
         <ReactTable
-          onclick={this.registerValuesHandler}
           filterable={true}
           defaultPageSize={10}
           data={this.state.users}
           columns={columns}
+          getTrProps={onRowClick}
         />
       </div>
     );

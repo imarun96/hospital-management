@@ -111,6 +111,11 @@ const App = () => {
                   Authority Setting
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to={"/allAppointments"} className="nav-link">
+                  All Appointments
+                </Link>
+              </li>
             </div>
           )}
 

@@ -46,12 +46,20 @@ export default class AllAppointments extends Component {
         accessor: "docType",
       },
       {
+        Header: "Reason",
+        accessor: "reason",
+      },
+      {
         Header: "Date",
         accessor: "date",
       },
       {
         Header: "Time Slot",
         accessor: "timeSlot",
+      },
+      {
+        Header: "Status",
+        accessor: "status",
       },
     ];
     return (
