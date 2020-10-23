@@ -24,9 +24,9 @@ import YourAppointments from "./components/YourAppointments";
 import AllAppointments from "./components/AllAppointments";
 import AuthoritySetting from "./components/AuthoritySetting";
 import AuthoritySuccessMessage from "./components/AuthoritySuccessMessage";
-
-import ReactNotification from 'react-notifications-component';
-import 'react-notifications-component/dist/theme.css';
+import BookingProfile from "./components/BookingProfile";
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -200,6 +200,11 @@ const App = () => {
             path="/authority-setting"
             exact
             component={AuthoritySetting}
+          ></AdminOnlyRoute>
+          <AdminOnlyRoute
+            path="/appointmentHistory/*"
+            exact
+            component={BookingProfile}
           ></AdminOnlyRoute>
           <Route
             path="/authorityMessage"

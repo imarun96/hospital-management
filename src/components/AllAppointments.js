@@ -3,7 +3,6 @@ import axios from "axios";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 import { Helmet } from "react-helmet";
-import { Button } from "reactstrap";
 
 export default class AllAppointments extends Component {
   constructor(props) {
@@ -21,10 +20,14 @@ export default class AllAppointments extends Component {
   componentDidMount() {
     this.getUsersData();
   }
-  acceptHandler = (props) => {
-    console.log("hello from button click = " + props.rowInfo);
-  };
   render() {
+    const onRowClick = (state, rowInfo) => {
+      return {
+        onClick: (e) => {
+          window.open("/appointmentHistory/" + rowInfo.original.booking_id);
+        },
+      };
+    };
     const columns = [
       {
         Header: "Booking ID",
@@ -72,6 +75,7 @@ export default class AllAppointments extends Component {
           defaultPageSize={10}
           data={this.state.users}
           columns={columns}
+          getTrProps={onRowClick}
         />
       </div>
     );
