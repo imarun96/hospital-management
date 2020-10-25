@@ -206,7 +206,7 @@ class BookAppointment extends Component {
                 const bookingId = res.data.booking_id;
                 store.addNotification({
                   title:
-                    "Appointment has been recorded. Do check mails for the approval from hospital.",
+                    "Your Appointment has been recorded. Do check mails for the approval from hospital.",
                   message: "Your Booking ID - " + bookingId,
                   type: "success",
                   container: "bottom-left",
