@@ -196,7 +196,6 @@ class BookAppointment extends Component {
         .then((res) => {
           for (let i = 0; i < res.data.length; i++) {
             if (res.data[i] === bookingData.timeSlot) {
-              console.log("Inside if statement");
               isTimeSlotAvailable = true;
             }
           }

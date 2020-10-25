@@ -24,7 +24,6 @@ export default class AllAppointments extends Component {
     this.setState({ loading: false, users: arr });
   }
   componentDidMount() {
-    console.log("Hello");
     this.getUsersData();
   }
   render() {
