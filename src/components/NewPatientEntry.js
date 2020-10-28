@@ -4,6 +4,8 @@ import AuthService from "../services/auth.service";
 import { Button, Form, Label, Input } from "reactstrap";
 import { Helmet } from "react-helmet";
 import LocationSearchModal from "./LandingPage";
+import { store } from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
 class NewPatientEntryHandler extends Component {
   state = {
     name: "",
@@ -56,6 +58,16 @@ class NewPatientEntryHandler extends Component {
     axios
       .post("http://localhost:8003/patients/patient", patientData)
       .then((res) => {
+        store.addNotification({
+          title: "Record added successfully",
+          message: res.data.name+" was added to Patient Database",
+          type: "success",
+          container: "bottom-left",
+          insert: "top",
+          dismiss: {
+            duration: 3500,
+          },
+        });
         this.props.history.push("/patientprofile/" + res.data.patient_id);
       });
   };

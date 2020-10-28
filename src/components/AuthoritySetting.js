@@ -22,11 +22,11 @@ class AuthoritySetting extends Component {
         this.setState({ email: response.data.email });
         this.setState({ roleName: response.data.roles[0].name });
         if (this.state.roleName === "ROLE_USER") {
-          this.setState({ responseMessage: "Your current role is USER" });
+          this.setState({ responseMessage: "Current role is USER" });
         } else if (this.state.roleName === "ROLE_DOCTOR") {
-          this.setState({ responseMessage: "Your current role is DOCTOR" });
+          this.setState({ responseMessage: "Current role is DOCTOR" });
         } else {
-          this.setState({ responseMessage: "Your current role is NURSE" });
+          this.setState({ responseMessage: "Current role is NURSE" });
         }
       })
       .catch((error) => {

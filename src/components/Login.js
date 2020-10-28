@@ -56,7 +56,6 @@ const Login = (props) => {
               error.response.data.message) ||
             error.message ||
             error.toString();
-
           setLoading(false);
           setMessage(resMessage);
         }
@@ -81,7 +80,7 @@ const Login = (props) => {
         />
         <Helmet>
           <title>Login • Apollo Hospitals</title>
-          <style>{'body { background-color: #45b8ac; }'}</style>
+          <style>{"body { background-color: #45b8ac; }"}</style>
         </Helmet>
         <Form onSubmit={handleLogin} ref={form}>
           <div className="form-group">
